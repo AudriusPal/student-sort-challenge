@@ -1,0 +1,50 @@
+<select #select>
+  <option value="NONE">NONE</option>
+  <option value="BUBBLE_SORT">BUBBLE_SORT</option>
+  <option value="HEAP">HEAP</option>
+  <option value="MERGE">MERGE</option>
+</select>
+
+
+
+<div>
+ <input type="file" (change)="onClickImportFile($event)">
+</div>
+
+<div>
+  <button (click)="onClickSort()">Sort</button>
+</div>
+
+<div>
+  <button (click)="onClickExportToFile()">Export to file</button>
+</div>
+
+<div>
+  Duration: {{sortDurationInMs}}
+</div>
+
+<div>
+  Number of records: {{numberOfRecords}}
+</div>
+
+
+<div *ngIf="dataSource">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>name</th>
+      <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="performance">
+      <th mat-header-cell *matHeaderCellDef>performance</th>
+      <td mat-cell *matCellDef="let element"> {{ element.performance }} </td>
+    </ng-container>
+
+
+    <ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </ng-container>
+
+  </table>
+</div>
