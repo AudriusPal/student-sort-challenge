@@ -1,9 +1,10 @@
 package com.student.challenge.service.sort;
 
-import com.student.challenge.dto.StudentSortResultDTO;
+import com.student.challenge.model.StudentModel;
 
 import java.io.InputStream;
+import java.util.List;
 
-public interface StudentSort {
-    StudentSortResultDTO getStudentSortResult(InputStream is);
+public interface StudentSortAlgorithm {
+    List<StudentModel> getStudentSortResult(InputStream is);
 }

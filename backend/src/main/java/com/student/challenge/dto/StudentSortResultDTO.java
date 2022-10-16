@@ -1,19 +1,24 @@
 package com.student.challenge.dto;
 
+import com.student.challenge.enums.SortType;
+
 import java.util.List;
 import java.util.ArrayList;
 
+//TODO need cover with tests
 public class StudentSortResultDTO {
     private float sortDurationInMs;
     private int numberOfRecords;
+    private SortType sortType;
     private List<StudentDTO> sortedList = new ArrayList();
 
     public StudentSortResultDTO() {
     }
 
-    public StudentSortResultDTO(float sortDurationInMs, int numberOfRecords, List<StudentDTO> sortedList) {
+    public StudentSortResultDTO(float sortDurationInMs, int numberOfRecords, SortType sortType, List<StudentDTO> sortedList) {
         this.sortDurationInMs = sortDurationInMs;
         this.numberOfRecords = numberOfRecords;
+        this.sortType = sortType;
         this.sortedList = sortedList;
     }
 
@@ -39,5 +44,13 @@ public class StudentSortResultDTO {
 
     public void setSortedList(List<StudentDTO> sortedList) {
         this.sortedList = sortedList;
+    }
+
+    public SortType getSortType() {
+        return sortType;
+    }
+
+    public void setSortType(SortType sortType) {
+        this.sortType = sortType;
     }
 }

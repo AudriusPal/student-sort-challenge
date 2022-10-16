@@ -37,7 +37,7 @@ export class AppComponent {
         this.dataSource.data = studentSortResult.sortedList;
 
       }, error => {
-        alert(error.errorMessage);
+        alert(error.message);
       });
     }
   }
@@ -49,7 +49,7 @@ export class AppComponent {
       this.dataSource.data = studentSortResult.sortedList;
 
     }, error => {
-      alert(error.errorMessage);
+      alert(error.message);
     });
   }
 
@@ -62,7 +62,7 @@ export class AppComponent {
       anchor.href = url;
       anchor.click();
     }, error => {
-      alert(error.errorMessage);
+      alert(error.message);
     });
   }
 

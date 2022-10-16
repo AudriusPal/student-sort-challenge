@@ -1,5 +1,6 @@
 package com.student.challenge.dto;
 
+//TODO need cover with tests
 public class StudentDTO {
     private String name;
     private float performance;
